@@ -1,6 +1,3 @@
-// frontend/pages/api/generate.js
-// frontend/pages/api/generate.js
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).end();
@@ -29,5 +26,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: String(err) });
   }
 }
-
-
