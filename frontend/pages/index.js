@@ -15,7 +15,7 @@ export default function Home() {
     const json = await res.json();
   
     if (json.preview_html) {
-      setCodeHtml(json.preview_html);
+      setCodeHtml(json.preview_html || "");
     } else {
       console.error("Backend error:", json);
     }
@@ -46,4 +46,5 @@ export default function Home() {
     </div>
   );
 }
+
 
