@@ -42,13 +42,13 @@ export default function Home() {
       <h3>Preview</h3>
       <iframe
         title="preview"
-        sandbox="allow-same-origin"
-        srcDoc={codeHtml || "<div style='padding:20px'>No preview</div>"}
-        style={{ width: "100%", height: 500, border: "1px solid #ddd", marginTop: 10 }}
+        srcDoc={codeHtml}
+        style={{ width: "100%", height: 500 }}
       />
     </div>
   );
 }
+
 
 
 
