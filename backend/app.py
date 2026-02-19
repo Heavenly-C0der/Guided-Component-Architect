@@ -36,7 +36,7 @@ def generate():
         return jsonify({"error": "Prompt is required"}), 400
 
     try:
-        structured = architect.run(prompt, max_retries=1)
+        structured = architect.run(prompt, max_retries=5)
 
         preview_html = wrap_preview(
             structured["preview_markup"],
@@ -50,4 +50,5 @@ def generate():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
