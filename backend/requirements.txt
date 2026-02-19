@@ -4,3 +4,4 @@ beautifulsoup4
 pydantic>=2.0
 gunicorn
 requests
+huggingface_hub
