@@ -5,7 +5,7 @@ class LLMClient:
         self,
         model="huggingface:Qwen/Qwen2.5-Coder-7B-Instruct",
         api_key=None,
-        max_retries=2,
+        max_retries=5,
     ):
         self.model = model
         self.max_retries = max_retries
@@ -49,3 +49,4 @@ class LLMClient:
                 last_error = str(e)
 
         raise RuntimeError(f"LLM generation failed: {last_error}")
+
