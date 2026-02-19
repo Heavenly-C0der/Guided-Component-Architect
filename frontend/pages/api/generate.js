@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     const json = await response.json();
 
-    // Directly forward backend response
+    // IMPORTANT: forward as-is
     return res.status(200).json(json);
 
   } catch (err) {
