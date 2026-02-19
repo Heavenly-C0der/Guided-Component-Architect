@@ -11,10 +11,16 @@ export default function Home() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt }),
     });
+  
     const json = await res.json();
-    // json.html should be sanitized on backend if possible
-    setCodeHtml(json.html || "");
-  }
+  
+    if (json.preview_html) {
+      setCodeHtml(json.preview_html);
+    } else {
+      console.error("Backend error:", json);
+    }
+}
+
 
   return (
     <div style={{ padding: 20 }}>
@@ -40,3 +46,4 @@ export default function Home() {
     </div>
   );
 }
+
