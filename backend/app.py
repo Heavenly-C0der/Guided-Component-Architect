@@ -13,7 +13,7 @@ app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 design_system_path = BASE_DIR / "system_design.json"
 
-llm_client = LLMClient(api_key=os.getenv("HF_API_KEY"))
+llm_client = LLMClient(api_key=os.getenv("HF_TOKEN"))
 generator = ComponentGenerator(llm_client, design_system_path)
 validator = ComponentValidator(design_system_path)
 architect = GuidedComponentArchitect(generator, validator, llm_client)
@@ -50,3 +50,4 @@ def generate():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
