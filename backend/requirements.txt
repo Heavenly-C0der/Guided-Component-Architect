@@ -2,7 +2,3 @@ Flask
 aisuite
 beautifulsoup4
 regex
-json
-os
-typing
-pathlib
