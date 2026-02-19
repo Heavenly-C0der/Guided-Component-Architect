@@ -14,10 +14,13 @@ export default function Home() {
   
     const json = await res.json();
   
+    console.log("API RESPONSE:", json);
+  
     if (json.preview_html) {
-      setCodeHtml(json.preview_html || "");
+      setCodeHtml(json.preview_html);
     } else {
       console.error("Backend error:", json);
+      setCodeHtml("<div style='padding:20px;color:red;'>Error generating preview</div>");
     }
 }
 
@@ -39,12 +42,13 @@ export default function Home() {
       <h3>Preview</h3>
       <iframe
         title="preview"
-        sandbox="allow-same-origin"           /* minimal privileges */
+        sandbox="allow-same-origin"
         srcDoc={codeHtml || "<div style='padding:20px'>No preview</div>"}
         style={{ width: "100%", height: 500, border: "1px solid #ddd", marginTop: 10 }}
       />
     </div>
   );
 }
+
 
 
