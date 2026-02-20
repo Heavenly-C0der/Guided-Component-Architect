@@ -186,17 +186,3 @@ User input is treated strictly as data, never as control logic.
 * Next.js
 * Vercel
 * Render
-
----
-
-## Purpose
-
-This project was built as an evaluation assignment to demonstrate:
-
-* Agentic orchestration
-* Governed code generation
-* Structured LLM outputs
-* Deployment-ready architecture
-* Practical debugging and production integration
-
- Or a technical architecture diagram section
